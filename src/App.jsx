@@ -4,14 +4,15 @@ import './App.css'
 function App() {
   const [todos, setTodos] = useState([]); 
   
-  const addTodo = () => { const text = prompt("Введите задачу"); 
+  const addTodo = () => { 
+    const text = prompt("Введите задачу"); 
     
-  if (!text) return; 
-    
-  const newTodo = { 
-    id: Date.now(), 
-    text: text }; 
-    setTodos([...todos, newTodo]); 
+    if (!text) return; 
+      
+    const newTodo = { 
+      id: Date.now(), 
+      text: text }; 
+      setTodos([...todos, newTodo]); 
   }; 
   
   return ( 
