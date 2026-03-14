@@ -3,6 +3,8 @@ import './App.css'
 
 function App() {
   const [todos, setTodos] = useState([]); 
+
+  const [count, setCount] = useState(0);
   
   const addTodo = () => { 
     const text = prompt("Введите задачу"); 
@@ -10,9 +12,11 @@ function App() {
     if (!text) return; 
       
     const newTodo = { 
-      id: Date.now(), 
-      text: text }; 
-      setTodos([...todos, newTodo]); 
+      id: count, 
+      text: text 
+    };
+    setCount(count => count + 1)
+    setTodos([...todos, newTodo]); 
   }; 
   
   return ( 
