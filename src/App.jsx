@@ -2,34 +2,25 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-   const [todos, setTodos] = useState([]);
+  const array = [1, 2, 3];
 
-  const [count, setCount] = useState(0);
-  
-  const addTodo = () => {
-    const text = prompt("Введите задачу");
-    
-    if (!text) return;
-    
-    const newTodo = {
-      id: count,
-      text: text
-    };
-    setCount(count => count + 1)
-    setTodos([...todos, newTodo]);
+  const listMultyplyFive = () => {
+    const five = 5;
 
-
-  };
+    return array.map(item => {
+        return(
+          <div>
+            {item * five}
+            <button>Удалить</button>
+          </div>
+        );
+    });
+  }
   
   return (
-    <div style={{ padding: "40px" }}>
-    <h1>Todo List</h1>
-    <button onClick={addTodo}> Добавить задачу </button>
-    <ul> {todos.map(todo => (
-      <li key={todo.id}> {todo.text} </li>
-    ))} 
-    </ul>
-    </div>
+    <>
+        {listMultyplyFive()}
+    </>
   );
 }
 
